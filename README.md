@@ -64,7 +64,7 @@ The AIMS Grid is a project management framework comprising four key components:
 
  5. Show transactions where currency is US dollars
 
-    SELECT * from transactions where currency="USD"`
+    `SELECT * from transactions where currency="USD";`
 
  6. Show transactions in 2020 join by date table
 
