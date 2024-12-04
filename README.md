@@ -1,4 +1,4 @@
-### Project : Sales Insights of Data Analysis-AtliQ Hardware
+## Project : Sales Insights of Data Analysis-AtliQ Hardware
 
 AtliQ Hardware, a supplier of computer hardware and peripherals across India, is headquartered in Delhi with multiple regional offices. The Sales Director faces challenges in tracking sales amidst a dynamic market and declining overall performance.
 
