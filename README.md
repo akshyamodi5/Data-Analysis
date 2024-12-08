@@ -45,6 +45,11 @@ The AIMS Grid is a project management framework comprising four key components:
 * Improved decision-making by the sales team, leading to a 10% reduction in total expenses.
 * Elimination of manual data gathering, saving 20% of operational time to reinvest in value-added activities.
 
+### Tools Used
+* MySQL
+* Microsoft Power BI
+* Power Query Editor
+
 ### Data Analysis Using SQL
 
 1. Show all customer records
