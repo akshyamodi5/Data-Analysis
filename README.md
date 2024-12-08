@@ -155,5 +155,24 @@ Product Types = DISTINCTCOUNT('atliq products'[product_type])
 Unique Customers = DISTINCTCOUNT('atliq transactions'[customer_code])
 ```
 
+## Insights
+
+1. Over four years, the company generated ₹985M revenue, ₹24.7M profit (2.5% margin), and ₹2M sales. In 2020, revenue was ₹142M with ₹2.1M profit from 350K units sold.
+
+2. Delhi NCR led in revenue with ₹520M (52.8%) but had a low 2.3% profit margin.
+
+3. Bhubaneshwar had the highest 2020 profit margin (10.48%), while Mumbai led in total profit contribution (23.89%).
+
+4. Bengaluru had the lowest profit margin (-20.8%) and profit contribution (-0.3%).
+
+5. Electricalsara Stores was the top customer, generating ₹413M in revenue.
+
+6. "Prod318" was the best-selling product with ₹69M revenue.
+
+7. Distribution and own-brand products each generated ₹494M over four years.
+
+8. Revenue dropped in June 2020, with the lowest profit margin in April 2020.
+
+
 
 
