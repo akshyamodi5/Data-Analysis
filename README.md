@@ -157,6 +157,8 @@ Unique Customers = DISTINCTCOUNT('atliq transactions'[customer_code])
 
 ![Image Alt](https://github.com/akshyamodi5/Data-Analysis/blob/2a8c137615d64b96022b8575d5de64818c786d17/Screenshot%202024-12-08%20230309.png)
 
+![Image Alt](https://github.com/akshyamodi5/Data-Analysis/blob/f964f0c83df3f93055030eacd94bf13826b10bdb/Screenshot%202024-12-08%20235709.png)
+
 ## Insights
 
 1. Over four years, the company generated ₹985M revenue, ₹24.7M profit (2.5% margin), and ₹2M sales. In 2020, revenue was ₹142M with ₹2.1M profit from 350K units sold.
