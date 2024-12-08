@@ -83,5 +83,72 @@ The AIMS Grid is a project management framework comprising four key components:
     `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020
 and transactions.market_code="Mark001";`
 
+### Power BI Analysis and Dashboard
+
+#### ETL (Extract, Transform, Load) & Data Cleaning - Power Query 
+1. The market table has two international markets with no zones allocated. Filtering it out using the dropdown. or Market table -> Home tab -> Transform data -> Transform data 
+```
+= Table.SelectRows(sales_markets, each ([zone] <> ""))
+```
+2. The transaction table has a ton of 0 and negative values in the sales_amount column.
+```
+= Table.SelectRows(sales_transactions, each ([sales_amount] <> -1 and [sales_amount] <> 0))
+```
+3. Converting USD currency to INR [General currency conversion for now]
+Add column -> Conditional column
+```
+= Table.AddColumn(#"Filtered Rows", "norm_sales_amount", each if [currency] = "USD" or [currency] = "USD#(cr)" then [sales_amount]*83 else [sales_amount])
+```
+
+#### Key Measures:
+1. Average Sales per Transaction
+```
+Average Sales per Transaction = DIVIDE(SUM('atliq transactions'[norm_sales_amount]), COUNTROWS('atliq transactions'))
+```
+2. Profit Margin %
+```
+Profit Margin % = DIVIDE([Total Profit Margin],[Revenue],0)
+```
+3. Profit Margin Contribution %
+```
+Profit Margin Contribution % = DIVIDE([Total Profit Margin],CALCULATE([Total Profit Margin],ALL('atliq products'),ALL('atliq customers'),ALL('atliq markets')))
+```
+4. Total Revenue
+```
+Revenue = SUM('sales transactions'[sales_amount])
+```
+5. Revenue Contribution %
+```
+Revenue Contribution % = DIVIDE([Revenue],CALCULATE([Revenue],ALL('atliq products'),ALL('atliq customers'),ALL('atliq markets')))
+```
+6. Total Sales Quantity
+```
+Sales Quantity = SUM('atliq transactions'[sales_qty])
+```
+7. Total Profit Margin
+```
+Total Profit Margin = SUM('atliq transactions'[profit_margin])
+```
+8. Average Sales Amount per Customer
+```
+Avg Sales Amt per Customer = DIVIDE(SUM('atliq transactions'[norm_sales_amount]), DISTINCTCOUNT('atliq customers'[customer_code]))
+```
+9. Total Customer Types
+```
+Customer Types = DISTINCTCOUNT('atliq customers'[customer_type])
+```
+10. Total Markets
+```
+Markets = DISTINCTCOUNT('atliq transactions'[market_code])
+```
+11. Total Product Types
+```
+Product Types = DISTINCTCOUNT('atliq products'[product_type])
+```
+12. Total Customers
+```
+Unique Customers = DISTINCTCOUNT('atliq transactions'[customer_code])
+```
+
 
 
